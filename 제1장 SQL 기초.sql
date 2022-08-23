@@ -53,6 +53,54 @@ DROP DATABASE `userDB`;
  
  
  # 실습 1-7
+ create table `TblUser` (
+	`userId` varchar(10) , 
+    `userName` varchar(10), 
+    `userHp` char(13), 
+    `userAge` tinyint, 
+    `userAddr` varchar(20) 
+    );
+    
+    create table `TblProduct` (
+		`prdCode` int , 
+        `prdName` varchar(10), 
+        `prdPrice` int, 
+        `prdAmount` int, 
+        `prdCompany` varchar(10), 
+        `prdMakeDate` date
+        );
+ 
  # 실습 1-8
+ insert into `TblUser` values ('p101', '김유신', '010-1234-1001', '25', '서울시 중구');
+ insert into `TblUser` values ('p102', '김춘추', '010-1234-1002', '23', '부산 금정구');
+ insert into `TblUser` values ('p103', '장보고', NULL, '31', '경기도 광주군');
+ insert into `TblUser` values ('p104', '강감찬', NULL, NULL, '경남 창원시');
+ insert into `TblUser` values ('p105', '이순신', '010-1234-1005', '50', NULL);
+ 
+ insert into `TblProduct` values ('1', '냉장고', '800', '10', 'LG', '2022-01-06');
+ insert into `TblProduct` values ('2', '노트북', '1200', '20', '삼성', '2022-01-06');
+ insert into `TblProduct` values ('3', 'TV', '1400', '6', 'LG', '2022-01-06');
+ insert into `TblProduct` values ('4', '세탁기', '1000', '8', 'LG', '2022-01-06');
+ insert into `TblProduct` values ('5', '컴퓨터', '1100', '0', null, null);
+ insert into `TblProduct` values ('6', '휴대폰', '900', '102', '삼성', '2022-01-06');
+
  # 실습 1-9
+ select * from `tblUser`;
+ select `userName` from `TblUser`;
+ select `userName`, `userHp` from `TblUser`;
+ select * from `tbluser` where `userid`='p102';
+ select * from `tbluser` where `userid`='p104' or `userid`='p105';
+ select * from `tbluser` where `userAddr`='신라';
+ select * from `tbluser` where `userAge`> 30;
+ select * from `tbluser` where `userHp`is NULL;
+ update `tblUser` set `userAge`=42 where `userID`='p104';
+ update `tbluser` set `userAddr`='경남 김해시' where `userid`='p105';
+ 
+ select * from `tblproduct`;
+ select `prdName` from `TblProduct`;
+ select `prdName`, `prdPrice` from `TblProduct`;
+ select * from `tblproduct` where `prdcompany`='LG';
+ select * from `tblproduct` where `prdCompany`='삼성';
+ update `tblproduct` set `prdcompany`='삼성', `prdmakedate`='2021-01-01' where `prdCode`=5;
+ 
  
