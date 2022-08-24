@@ -76,5 +76,22 @@ insert into `user5` set `name`='김유신';
 insert into `user5` set `name`='김춘추', `addr`='부산시';
 
 # 실습 2-11
+alter table `user5` add `hp` varchar(20);
+alter table `user5` add `birth` char(10) default '0000-00-00' after `name`;
+alter table `user5` add `uid` varchar(10) first; #alter할 때 primary key 지정 불가
+
 # 실습 2-12
+alter table `user5` modify `hp` char(13);
+alter table `user5` modify `age` tinyint;
+
 # 실습 2-13
+alter table `user5` change column `addr` `address` varchar(100);
+
+# 실습 2-14
+alter table `user5` drop `gender`;
+
+# 실습 2-15
+create table `user6` like `user5`; #`user5`의 데이터는 복사 안 됨
+
+# 실습 2-16
+insert into `user6` select * from `user5`;
