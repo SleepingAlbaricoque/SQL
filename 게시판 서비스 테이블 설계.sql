@@ -45,4 +45,11 @@ CREATE TABLE `board_article` (
 );
 
 #파일 테이블 생성
-CREATE TABLE `board_file` ();
+CREATE TABLE `board_file` (
+	`fno`			INT AUTO_INCREMENT PRIMARY KEY,
+	`parent`		INT,
+	`newName`	VARCHAR(255),
+	`oriName`	VARCHAR(255),
+	`downlaod`	INT DEFAULT 0, 
+	`rdate`		DATETIME NOT NULL		
+);
