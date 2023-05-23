@@ -19,3 +19,9 @@
 
 ## 제4장 SQL 고급
     - inner join, right / left join
+
+## MD_ 파일들
+    - ERD 작성 실습하기
+
+## SQL 연습문제, 모델링 실습
+    - SQL 작성 연습
